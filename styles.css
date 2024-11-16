@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&family=Playfair+Display&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #333;
+  flex-direction: column; /* Stack the container and the header text */
+}
+
+.header-text {
+  font-family: "Playfair Display", serif; /* Elegant, stylish font */
+  font-size: 40px; /* Big font size */
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Stylish shadow for contrast */
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  height: 80vh;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 10px;
+  position: relative;
+  transition: flex 0.7s ease-in-out;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
